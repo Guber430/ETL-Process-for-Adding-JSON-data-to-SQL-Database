@@ -1,0 +1,82 @@
+[
+    {
+        "team_id": 15,
+        "name": "10^3 Giant Goal",
+        "city": "Welland",
+        "rank": 2,
+        "active": true,
+        "manager_name": "Joe Doe",
+        "manager_city": "Welland",
+        "formed_date": "2020-09-01",
+        "players": [
+            {
+                "player_id": 21,
+                "user_id": "Jennifer_Boucher",
+                "title": "Ms",
+                "first_name": "Jennifer",
+                "last_name": "Boucher",
+                "quiz_date": "2020-09-08",
+                "street": "17 Devine Cresccent",
+                "city": "Thorold",
+                "province": "Ontario",
+                "phone": "9054012463",
+                "is_video_game": true,
+                "income": 96873.58
+            },
+            {
+                "player_id": 22,
+                "user_id": "Fernando_Gross",
+                "title": "Mr",
+                "first_name": "Fernando",
+                "last_name": "Gross",
+                "quiz_date": "2020-12-21",
+                "street": "11 Pine St South",
+                "city": "Thorold",
+                "province": "Ontario",
+                "phone": "9053514629",
+                "is_video_game": true,
+                "income": 162572.62
+            },
+            {
+                "player_id": 23,
+                "user_id": "Andrew_Strilec",
+                "title": "Mr",
+                "first_name": "Andrew",
+                "last_name": "Strilec",
+                "quiz_date": "2022-01-07",
+                "street": "3203 Lake City Way",
+                "city": "Burnaby",
+                "province": "British Columbia",
+                "phone": "6046127958",
+                "is_video_game": true,
+                "income": 88956.49
+            }
+        ]
+    },
+    {
+        "team_id": 16,
+        "name": "Unfrozen Snowman",
+        "city": "St Catharines",
+        "rank": 3,
+        "active": false,
+        "manager_name": "Jane Doe",
+        "manager_city": "Niagara Falls",
+        "formed_date": "2020-10-30",
+        "players": [
+            {
+                "player_id": 24,
+                "user_id": "Merrill_Macrillo",
+                "title": "Mr",
+                "first_name": "Merrill",
+                "last_name": "Macrillo",
+                "quiz_date": "2022-01-10",
+                "street": null,
+                "city": null,
+                "province": null,
+                "phone": "4163648816",
+                "is_video_game": null,
+                "income": 89672.38
+            }
+        ]
+    }
+]
