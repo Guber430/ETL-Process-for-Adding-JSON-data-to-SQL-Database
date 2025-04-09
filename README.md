@@ -41,18 +41,18 @@ The repository contains SQL scripts that perform the following:
 ---
 
 ## Execution:
-1. Database Setup:
+### 1. Database Setup:
   - Database Creation: The script drops any existing lab4_db database and creates a new one to ensure a clean environment
   - Table Creation: Two tables, team and player, are created with a specified schema. Primary keys are defined, and a foreign key in the player table references the team table
 
-2. Extraction:
+### 2. Extraction:
   - Extracting JSON Data: The OPENROWSET function is used to read the entire JSON file as a single CLOB. This initial extraction ensures that the file's contents are available for further processing
 
-3. Transformation:
+### 3. Transformation:
   - Parsing JSON Data: The JSON content is parsed using OPENJSON to extract individual team records. A temporary table (#temp_team) is then built to hold the intermediate data
   - Handling Nested Data (Players): The players array within the JSON is further parsed and stored in a temporary table (json_temp_player) to facilitate a smooth transformation into the relational structure
 
-4. Load:
+### 4. Load:
   - Inserting Transformed Data: The transformed data is inserted into intermediate tables (json_team and json_player) with necessary modifications such as enforcing NOT NULL on key columns
   - Merging with Existing Data: The SQL scripts then load the JSON data into the existing team and player tables
   - To preserve primary key values, IDENTITY_INSERT is used during the insert operations
