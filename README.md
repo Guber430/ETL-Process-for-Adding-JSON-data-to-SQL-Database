@@ -15,7 +15,7 @@
 - [Disclaimer](#disclaimer)
 - [Author](#author)
 - [License](#license)
-
+---
 ## Overview
 This project demonstrates an **ETL (Extract, Transform, Load) process** that extracts JSON data from a file, transforms it into a relational format using SQL Server capabilities, and loads the data into an existing SQL database. It effectively integrates data for teams and players into the database while enforcing data integrity via primary and foreign key constraints.
 
@@ -31,7 +31,7 @@ The repository contains SQL scripts that perform the following:
 - **JSON Data File:** Ensure that the JSON file (e.g., `lab3_data.json`) is available at the specified location (default: `C:\data\lab3_data.json`). Adjust the file path in the SQL scripts if necessary
 - **SQL Server Management Tools:** Use SQL Server Management Studio (SSMS) or a similar tool to execute the scripts
 - **Permissions:** Sufficient privileges to create databases, tables, and perform data insertions
-
+---
 ## Usage
 1. Execute the SQL Scripts Sequentially:
    - First, run the database and table creation scripts to set up the working environment
@@ -42,29 +42,27 @@ The repository contains SQL scripts that perform the following:
    ```sql
    SELECT * FROM team;
    SELECT * FROM player;
+---
 
-ETL Process Details
-Step 1: Database Setup
-Database Creation: The script drops any existing lab4_db database and creates a new one to ensure a clean environment
+## Execution:
+1. Database Setup:
+  - Database Creation: The script drops any existing lab4_db database and creates a new one to ensure a clean environment
+  - Table Creation: Two tables, team and player, are created with a specified schema. Primary keys are defined, and a foreign key in the player table references the team table
 
-Table Creation: Two tables, team and player, are created with a specified schema. Primary keys are defined, and a foreign key in the player table references the team table
+2. Extraction:
+  - Extracting JSON Data: The OPENROWSET function is used to read the entire JSON file as a single CLOB. This initial extraction ensures that the file's contents are available for further processing
 
-Step 2: Extraction
-Extracting JSON Data: The OPENROWSET function is used to read the entire JSON file as a single CLOB. This initial extraction ensures that the file's contents are available for further processing
+3. Transformation:
+  - Parsing JSON Data: The JSON content is parsed using OPENJSON to extract individual team records. A temporary table (#temp_team) is then built to hold the intermediate data
+  - Handling Nested Data (Players): The players array within the JSON is further parsed and stored in a temporary table (json_temp_player) to facilitate a smooth transformation into the relational structure
 
-Step 3: Transformation
-Parsing JSON Data: The JSON content is parsed using OPENJSON to extract individual team records. A temporary table (#temp_team) is then built to hold the intermediate data
+4. Load:
+  - Inserting Transformed Data: The transformed data is inserted into intermediate tables (json_team and json_player) with necessary modifications such as enforcing NOT NULL on key columns
+  - Merging with Existing Data: The SQL scripts then load the JSON data into the existing team and player tables
+  - To preserve primary key values, IDENTITY_INSERT is used during the insert operations
+---
 
-Handling Nested Data (Players): The players array within the JSON is further parsed and stored in a temporary table (json_temp_player) to facilitate a smooth transformation into the relational structure
-
-Step 4: Load
-Inserting Transformed Data: The transformed data is inserted into intermediate tables (json_team and json_player) with necessary modifications such as enforcing NOT NULL on key columns
-
-Merging with Existing Data: The SQL scripts then load the JSON data into the existing team and player tables
-
-To preserve primary key values, IDENTITY_INSERT is used during the insert operations
-
-Project Structure
+## Project Structure
 
 ├── README.md                # This file
 ├── lab3_data.json           # JSON file containing team and player data
@@ -73,7 +71,7 @@ Project Structure
     └── etl_process.sql      # Scripts for extracting, transforming, and loading JSON data
 
 
-Installation
+## Installation
 Clone the Repository:
 ```bash
 git clone https://github.com/Guber430/ETL-Process-for-Adding-JSON-data-to-SQL-Database.git
