@@ -5,7 +5,7 @@
 - [Project Description](#project-description)
 - [Prerequisites](#prerequisites)
 - [Usage](#usage)
-- [ETL Process Details](#etl-process-details)
+- [Execution](#execution)
   - [Step 1: Database Setup](#step-1-database-setup)
   - [Step 2: Extraction](#step-2-extraction)
   - [Step 3: Transformation](#step-3-transformation)
