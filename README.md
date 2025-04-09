@@ -10,9 +10,7 @@
   - [Step 2: Extraction](#step-2-extraction)
   - [Step 3: Transformation](#step-3-transformation)
   - [Step 4: Load](#step-4-load)
-- [Project Structure](#project-structure)
 - [Installation](#installation)
-- [Disclaimer](#disclaimer)
 ---
 ## Overview
 This project demonstrates an **ETL (Extract, Transform, Load) process** that extracts JSON data from a file, transforms it into a relational format using SQL Server capabilities, and loads the data into an existing SQL database. It effectively integrates data for teams and players into the database while enforcing data integrity via primary and foreign key constraints.
@@ -59,15 +57,6 @@ The repository contains SQL scripts that perform the following:
   - Merging with Existing Data: The SQL scripts then load the JSON data into the existing team and player tables
   - To preserve primary key values, IDENTITY_INSERT is used during the insert operations
 ---
-
-## Project Structure
-
-├── README.md                # This file
-├── lab3_data.json           # JSON file containing team and player data
-└── SQL_Scripts/
-    ├── create_database.sql  # Scripts for database and table creation
-    └── etl_process.sql      # Scripts for extracting, transforming, and loading JSON data
-
 
 ## Installation
 Clone the Repository:
