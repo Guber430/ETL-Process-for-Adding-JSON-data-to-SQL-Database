@@ -13,8 +13,6 @@
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Disclaimer](#disclaimer)
-- [Author](#author)
-- [License](#license)
 ---
 ## Overview
 This project demonstrates an **ETL (Extract, Transform, Load) process** that extracts JSON data from a file, transforms it into a relational format using SQL Server capabilities, and loads the data into an existing SQL database. It effectively integrates data for teams and players into the database while enforcing data integrity via primary and foreign key constraints.
